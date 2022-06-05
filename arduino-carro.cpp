@@ -22,8 +22,7 @@ void Carro::mover(int izquierda, int derecha){
 
 }
 
-void Carro::girar(int grados){
-    int tiempo = 500;
+void Carro::girar(int grados, int tiempo){
 
     mover(0,0);
     delay(100);

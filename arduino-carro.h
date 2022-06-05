@@ -12,7 +12,7 @@ class Carro(
 
     void alto();
     void mover(int izquierda, int derecha);
-    void girar(int grados);
+    void girar(int grados, int tiempo);
 )
 
 #endif

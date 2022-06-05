@@ -1,5 +1,5 @@
 #include <Servo.h>          //Servo motor library. This is standard library
-#include <NewPing.h>        //Ultrasonic sensor function library. You must install this library
+//#include <NewPing.h>        //Ultrasonic sensor function library. You must install this library
 #include <arduino-carro.h>  //locura.com
 
 // //our L298N control pins
@@ -9,6 +9,7 @@
 // const int RightMotorBackward = 2;
 Carro micro;
 int giro = 90;
+int tiempo = 410;
 //sensor pins
 #define trig_pin A1 //analog input 1
 #define echo_pin A2 //analog input 2
@@ -155,7 +156,7 @@ void turnRight(){
   
 //   digitalWrite(LeftMotorBackward, LOW);
 //   digitalWrite(RightMotorBackward, LOW);
-    micro.girar(tiempo);
+    micro.girar(giro,tiempo);
   
   
 }
@@ -175,5 +176,5 @@ void turnLeft(){
   
 //   digitalWrite(LeftMotorBackward, LOW);
 //   digitalWrite(RightMotorBackward, LOW);
-    micro.girar(tiempo * -1);
+    micro.girar(giro * -1, tiempo);
 }
