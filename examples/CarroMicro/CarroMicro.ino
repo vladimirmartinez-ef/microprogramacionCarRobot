@@ -1,13 +1,13 @@
 #include <Servo.h>          //Servo motor library. This is standard library
-//#include <NewPing.h>        //Ultrasonic sensor function library. You must install this library
-#include <arduino-carro.h>  //locura.com
+#include <NewPing.h>        //Ultrasonic sensor function library. You must install this library
+#include <ArduinoCarro.h>  //locura.com
 
 // //our L298N control pins
 // const int LeftMotorForward = 5;
 // const int LeftMotorBackward = 4;
 // const int RightMotorForward = 3;
 // const int RightMotorBackward = 2;
-arduino-carro micro;
+Carro micro;
 int giro = 90;
 int tiempo = 410;
 //sensor pins
@@ -105,76 +105,26 @@ int readPing(){
 }
 
 void moveStop(){
-  
-//   digitalWrite(RightMotorForward, LOW);
-//   digitalWrite(LeftMotorForward, LOW);
-//   digitalWrite(RightMotorBackward, LOW);
-//   digitalWrite(LeftMotorBackward, LOW);
     micro.mover(0,0);
 }
 
 void moveForward(){
 
   if(!goesForward){
-
     goesForward=true;
-    
-    // digitalWrite(LeftMotorForward, HIGH);
-    // digitalWrite(RightMotorForward, HIGH);
-  
-    // digitalWrite(LeftMotorBackward, LOW);
-    // digitalWrite(RightMotorBackward, LOW); 
     micro.mover(10,10);
   }
 }
 
 void moveBackward(){
-
   goesForward=false;
-
-//   digitalWrite(LeftMotorBackward, HIGH);
-//   digitalWrite(RightMotorBackward, HIGH);
-  
-//   digitalWrite(LeftMotorForward, LOW);
-//   digitalWrite(RightMotorForward, LOW);
     micro.mover(-10,-10);
-  
 }
 
 void turnRight(){
-
-//   digitalWrite(LeftMotorForward, HIGH);
-//   digitalWrite(RightMotorBackward, HIGH);
-  
-//   digitalWrite(LeftMotorBackward, LOW);
-//   digitalWrite(RightMotorForward, LOW);
-  
-//   delay(500);
-  
-//   digitalWrite(LeftMotorForward, HIGH);
-//   digitalWrite(RightMotorForward, HIGH);
-  
-//   digitalWrite(LeftMotorBackward, LOW);
-//   digitalWrite(RightMotorBackward, LOW);
-    micro.girar(giro,tiempo);
-  
-  
+    micro.girar(giro,tiempo);  
 }
 
 void turnLeft(){
-
-//   digitalWrite(LeftMotorBackward, HIGH);
-//   digitalWrite(RightMotorForward, HIGH);
-  
-//   digitalWrite(LeftMotorForward, LOW);
-//   digitalWrite(RightMotorBackward, LOW);
-
-//   delay(500);
-  
-//   digitalWrite(LeftMotorForward, HIGH);
-//   digitalWrite(RightMotorForward, HIGH);
-  
-//   digitalWrite(LeftMotorBackward, LOW);
-//   digitalWrite(RightMotorBackward, LOW);
     micro.girar(giro * -1, tiempo);
 }

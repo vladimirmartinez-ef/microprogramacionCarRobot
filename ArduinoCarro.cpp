@@ -1,5 +1,5 @@
-//#include "arduino.h"
-#include "arduino-carro.h"
+#include "Arduino.h"
+#include "ArduinoCarro.h"
 
 Carro::Carro(){
     pinMode(ruedaIzquierdaAdelante, OUTPUT);
@@ -30,7 +30,7 @@ void Carro::girar(int grados, int tiempo){
     if(grados > 0){
         mover(10,-10);
     }else if(grados < 0){
-        mover(-10,10)
+        mover(-10,10);
     }
 
     delay(tiempo);
