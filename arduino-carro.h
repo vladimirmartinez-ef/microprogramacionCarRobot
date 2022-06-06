@@ -1,6 +1,6 @@
 #ifndef arduino-carro_h
 #define arduino-carro_h
-#include <arduino.h>
+//#include <arduino.h>
 
 class Carro(
     byte ruedaIzquierdaAdelante = 5;
