@@ -1,8 +1,13 @@
 #ifndef arduino-carro_h
 #define arduino-carro_h
-//#include <arduino.h>
 
-class Carro(
+#if ARDUINO > 100
+#include <arduino.h>
+#else
+#include <WProgram.h>
+#endif
+
+class Carro{
     byte ruedaIzquierdaAdelante = 5;
     byte ruedaIzquierdaRetroceso = 4;
     byte ruedaDerechaAdelante = 3;
@@ -13,6 +18,6 @@ class Carro(
     void alto();
     void mover(int izquierda, int derecha);
     void girar(int grados, int tiempo);
-)
+}
 
 #endif

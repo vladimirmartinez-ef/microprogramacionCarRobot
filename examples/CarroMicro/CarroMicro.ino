@@ -7,7 +7,7 @@
 // const int LeftMotorBackward = 4;
 // const int RightMotorForward = 3;
 // const int RightMotorBackward = 2;
-Carro micro;
+arduino-carro micro;
 int giro = 90;
 int tiempo = 410;
 //sensor pins
